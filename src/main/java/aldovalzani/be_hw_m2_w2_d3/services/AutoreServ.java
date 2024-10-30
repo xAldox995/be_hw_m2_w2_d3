@@ -54,7 +54,7 @@ public class AutoreServ {
         return this.autoreRepo.save(authorFound);
     }
 
-    public void findByAndDel(long authorId) {
+    public void findAuthorByIdAndDel(long authorId) {
         AutoreEn authorFound = this.findAuthorById(authorId);
         this.autoreRepo.delete(authorFound);
     }

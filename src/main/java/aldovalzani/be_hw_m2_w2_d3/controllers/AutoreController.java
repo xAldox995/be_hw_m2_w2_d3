@@ -21,36 +21,36 @@ public class AutoreController {
     private AutoreServ autoreServ;
 
     @GetMapping
-    public Page<AutoreEn> findAll(@RequestParam(defaultValue = "0") int page,
-                                  @RequestParam(defaultValue = "5") int size) {
+    public Page<AutoreEn> findAllAuthors(@RequestParam(defaultValue = "0") int page,
+                                         @RequestParam(defaultValue = "5") int size) {
         return this.autoreServ.findAllAuthors(page, size);
     }
 
     // POST http://localhost:3001/autori + mettere body con classe payloads
     @PostMapping
     @ResponseStatus(HttpStatus.CREATED)
-    public AutoreEn saveBlog(@RequestBody AutorePL body) {
+    public AutoreEn saveAuthor(@RequestBody AutorePL body) {
         return this.autoreServ.saveAuthor(body);
     }
 
 
     //GET specifico http://localhost:3001/blog_posts/{blog_id}
     @GetMapping("/{autori_id}")
-    public AutoreEn findById(@PathVariable long autori_id) {
+    public AutoreEn findAuthorById(@PathVariable long autori_id) {
         return this.autoreServ.findAuthorById(autori_id);
     }
 
     //PUT http://localhost:3001/blog_posts/{blog_id}+body
     @PutMapping("/{autori_id}")
-    public AutoreEn findByIdAndUpdate(@PathVariable long autori_id, @RequestBody AutorePL body) {
+    public AutoreEn findAuthorByIdAndUp(@PathVariable long autori_id, @RequestBody AutorePL body) {
         return this.autoreServ.findAuthorByIdAndUp(autori_id, body);
     }
 
     //DELETE http://localhost:3001/blog_posts/{blog_id}
     @DeleteMapping("/{autori_id}")
     @ResponseStatus(HttpStatus.NO_CONTENT)
-    public void findByIdAndDel(@PathVariable long autori_id) {
-        this.autoreServ.findByAndDel(autori_id);
+    public void findAuthorByIdAndDel(@PathVariable long autori_id) {
+        this.autoreServ.findAuthorByIdAndDel(autori_id);
     }
 
 }
