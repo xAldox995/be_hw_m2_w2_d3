@@ -9,8 +9,6 @@ import lombok.Getter;
 import lombok.NoArgsConstructor;
 import lombok.Setter;
 
-import java.time.LocalDate;
-
 @Entity
 @Table(name = "autori")
 @Getter
@@ -24,10 +22,10 @@ public class AutoreEn {
     private String nome;
     private String cognome;
     private String email;
-    private LocalDate data_di_nascita;
+    private String data_di_nascita;
     private String avatar;
 
-    public AutoreEn(String cognome, LocalDate data_di_nascita, String email, String nome) {
+    public AutoreEn(String cognome, String data_di_nascita, String email, String nome) {
         this.avatar = "https://ui-avatars.com/api/?name=" + nome + "+" + cognome;
         this.cognome = cognome;
         this.data_di_nascita = data_di_nascita;

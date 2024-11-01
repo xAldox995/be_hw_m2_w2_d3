@@ -23,6 +23,8 @@ public class AutoreServ {
                 }
         );
         AutoreEn newAuthor = new AutoreEn(body.getCognome(), body.getData_di_nascita(), body.getEmail(), body.getNome());
+        System.out.println("Data di nascita ricevuta: " + body.getData_di_nascita());
+
         return this.autoreRepo.save(newAuthor);
     }
 
